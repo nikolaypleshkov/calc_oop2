@@ -355,8 +355,9 @@ namespace Calculator
             // 
             // button25
             // 
+            this.button25.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button25.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button25.Location = new System.Drawing.Point(-1, 196);
+            this.button25.Location = new System.Drawing.Point(2, 186);
             this.button25.Name = "button25";
             this.button25.Size = new System.Drawing.Size(76, 38);
             this.button25.TabIndex = 24;
@@ -365,8 +366,9 @@ namespace Calculator
             // 
             // button26
             // 
+            this.button26.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button26.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button26.Location = new System.Drawing.Point(72, 196);
+            this.button26.Location = new System.Drawing.Point(72, 186);
             this.button26.Name = "button26";
             this.button26.Size = new System.Drawing.Size(76, 38);
             this.button26.TabIndex = 25;
@@ -375,8 +377,9 @@ namespace Calculator
             // 
             // button27
             // 
+            this.button27.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button27.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button27.Location = new System.Drawing.Point(144, 196);
+            this.button27.Location = new System.Drawing.Point(144, 186);
             this.button27.Name = "button27";
             this.button27.Size = new System.Drawing.Size(76, 38);
             this.button27.TabIndex = 26;
@@ -386,8 +389,9 @@ namespace Calculator
             // button28
             // 
             this.button28.BackColor = System.Drawing.Color.Transparent;
+            this.button28.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button28.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button28.Location = new System.Drawing.Point(215, 196);
+            this.button28.Location = new System.Drawing.Point(214, 186);
             this.button28.Name = "button28";
             this.button28.Size = new System.Drawing.Size(76, 38);
             this.button28.TabIndex = 27;
@@ -402,7 +406,7 @@ namespace Calculator
             this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox1.Location = new System.Drawing.Point(-1, 35);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(510, 155);
+            this.richTextBox1.Size = new System.Drawing.Size(510, 145);
             this.richTextBox1.TabIndex = 29;
             this.richTextBox1.Text = "";
             this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
