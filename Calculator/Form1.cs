@@ -16,5 +16,20 @@ namespace Calculator
         {
             InitializeComponent();
         }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+            richTextBox1.RightToLeft = RightToLeft.Yes;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            label1.Text = richTextBox1.Text + "=";
+            richTextBox1.Text = "3";
+        }
     }
 }
