@@ -31,5 +31,20 @@ namespace Calculator
             label1.Text = richTextBox1.Text + "=";
             richTextBox1.Text = "3";
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Text += button5.Text;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Text += button6.Text;
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Text += button7.Text;
+        }
     }
 }
