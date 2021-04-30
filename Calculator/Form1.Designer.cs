@@ -56,9 +56,9 @@ namespace Calculator
             this.button25 = new System.Windows.Forms.Button();
             this.button26 = new System.Windows.Forms.Button();
             this.button27 = new System.Windows.Forms.Button();
-            this.button28 = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.button29 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -86,6 +86,7 @@ namespace Calculator
             this.button2.TabIndex = 1;
             this.button2.Text = "0";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -164,6 +165,7 @@ namespace Calculator
             this.button8.TabIndex = 7;
             this.button8.Text = "+";
             this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button9
             // 
@@ -177,6 +179,7 @@ namespace Calculator
             this.button9.TabIndex = 8;
             this.button9.Text = "4";
             this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button10
             // 
@@ -190,6 +193,7 @@ namespace Calculator
             this.button10.TabIndex = 9;
             this.button10.Text = "5";
             this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button11
             // 
@@ -203,6 +207,7 @@ namespace Calculator
             this.button11.TabIndex = 10;
             this.button11.Text = "6";
             this.button11.UseVisualStyleBackColor = false;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // button12
             // 
@@ -214,6 +219,7 @@ namespace Calculator
             this.button12.TabIndex = 11;
             this.button12.Text = "-";
             this.button12.UseVisualStyleBackColor = false;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // button13
             // 
@@ -227,6 +233,7 @@ namespace Calculator
             this.button13.TabIndex = 12;
             this.button13.Text = "7";
             this.button13.UseVisualStyleBackColor = false;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
             // button14
             // 
@@ -240,6 +247,7 @@ namespace Calculator
             this.button14.TabIndex = 13;
             this.button14.Text = "8";
             this.button14.UseVisualStyleBackColor = false;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
             // button15
             // 
@@ -253,6 +261,7 @@ namespace Calculator
             this.button15.TabIndex = 14;
             this.button15.Text = "9";
             this.button15.UseVisualStyleBackColor = false;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
             // 
             // button16
             // 
@@ -264,6 +273,7 @@ namespace Calculator
             this.button16.TabIndex = 15;
             this.button16.Text = "X";
             this.button16.UseVisualStyleBackColor = false;
+            this.button16.Click += new System.EventHandler(this.button16_Click);
             // 
             // button17
             // 
@@ -308,6 +318,7 @@ namespace Calculator
             this.button20.TabIndex = 19;
             this.button20.Text = "÷";
             this.button20.UseVisualStyleBackColor = false;
+            this.button20.Click += new System.EventHandler(this.button20_Click);
             // 
             // button21
             // 
@@ -386,25 +397,13 @@ namespace Calculator
             this.button27.Text = "M+";
             this.button27.UseVisualStyleBackColor = true;
             // 
-            // button28
-            // 
-            this.button28.BackColor = System.Drawing.Color.Transparent;
-            this.button28.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button28.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button28.Location = new System.Drawing.Point(214, 186);
-            this.button28.Name = "button28";
-            this.button28.Size = new System.Drawing.Size(76, 38);
-            this.button28.TabIndex = 27;
-            this.button28.Text = "M-";
-            this.button28.UseVisualStyleBackColor = false;
-            // 
             // richTextBox1
             // 
             this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.Location = new System.Drawing.Point(-1, 35);
+            this.richTextBox1.Location = new System.Drawing.Point(2, 35);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(510, 145);
             this.richTextBox1.TabIndex = 29;
@@ -422,15 +421,27 @@ namespace Calculator
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // button29
+            // 
+            this.button29.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button29.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button29.Location = new System.Drawing.Point(226, 186);
+            this.button29.Name = "button29";
+            this.button29.Size = new System.Drawing.Size(76, 38);
+            this.button29.TabIndex = 31;
+            this.button29.Text = "M-";
+            this.button29.UseVisualStyleBackColor = true;
+            this.button29.Click += new System.EventHandler(this.button29_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(650, 806);
+            this.Controls.Add(this.button29);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.button28);
             this.Controls.Add(this.button27);
             this.Controls.Add(this.button26);
             this.Controls.Add(this.button25);
@@ -496,9 +507,9 @@ namespace Calculator
         private System.Windows.Forms.Button button25;
         private System.Windows.Forms.Button button26;
         private System.Windows.Forms.Button button27;
-        private System.Windows.Forms.Button button28;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button29;
     }
 }
 
