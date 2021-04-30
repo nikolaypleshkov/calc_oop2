@@ -320,7 +320,7 @@ namespace Calculator
             this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.Location = new System.Drawing.Point(-1, 23);
+            this.richTextBox1.Location = new System.Drawing.Point(13, 23);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(510, 155);
             this.richTextBox1.TabIndex = 29;
@@ -330,7 +330,7 @@ namespace Calculator
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label1.Location = new System.Drawing.Point(381, 9);
+            this.label1.Location = new System.Drawing.Point(395, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(128, 23);
             this.label1.TabIndex = 30;
@@ -341,7 +341,7 @@ namespace Calculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(636, 806);
+            this.ClientSize = new System.Drawing.Size(650, 806);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.button28);
