@@ -64,7 +64,7 @@ namespace Calculator
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Black;
-            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(-1, 708);
@@ -77,7 +77,7 @@ namespace Calculator
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.Black;
-            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Location = new System.Drawing.Point(126, 708);
@@ -91,7 +91,7 @@ namespace Calculator
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.Black;
-            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Location = new System.Drawing.Point(252, 708);
@@ -100,6 +100,7 @@ namespace Calculator
             this.button3.TabIndex = 2;
             this.button3.Text = ",";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -116,7 +117,7 @@ namespace Calculator
             // button5
             // 
             this.button5.BackColor = System.Drawing.Color.Black;
-            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.ForeColor = System.Drawing.Color.White;
             this.button5.Location = new System.Drawing.Point(-1, 611);
@@ -130,7 +131,7 @@ namespace Calculator
             // button6
             // 
             this.button6.BackColor = System.Drawing.Color.Black;
-            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.ForeColor = System.Drawing.Color.White;
             this.button6.Location = new System.Drawing.Point(126, 611);
@@ -144,7 +145,7 @@ namespace Calculator
             // button7
             // 
             this.button7.BackColor = System.Drawing.Color.Black;
-            this.button7.FlatAppearance.BorderSize = 0;
+            this.button7.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.ForeColor = System.Drawing.Color.White;
             this.button7.Location = new System.Drawing.Point(252, 611);
@@ -170,7 +171,7 @@ namespace Calculator
             // button9
             // 
             this.button9.BackColor = System.Drawing.Color.Black;
-            this.button9.FlatAppearance.BorderSize = 0;
+            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button9.ForeColor = System.Drawing.Color.White;
             this.button9.Location = new System.Drawing.Point(-1, 516);
@@ -184,10 +185,10 @@ namespace Calculator
             // button10
             // 
             this.button10.BackColor = System.Drawing.Color.Black;
-            this.button10.FlatAppearance.BorderSize = 0;
+            this.button10.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button10.ForeColor = System.Drawing.Color.White;
-            this.button10.Location = new System.Drawing.Point(123, 516);
+            this.button10.Location = new System.Drawing.Point(126, 516);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(130, 101);
             this.button10.TabIndex = 9;
@@ -198,7 +199,7 @@ namespace Calculator
             // button11
             // 
             this.button11.BackColor = System.Drawing.Color.Black;
-            this.button11.FlatAppearance.BorderSize = 0;
+            this.button11.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button11.ForeColor = System.Drawing.Color.White;
             this.button11.Location = new System.Drawing.Point(252, 516);
@@ -224,7 +225,7 @@ namespace Calculator
             // button13
             // 
             this.button13.BackColor = System.Drawing.Color.Black;
-            this.button13.FlatAppearance.BorderSize = 0;
+            this.button13.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button13.ForeColor = System.Drawing.Color.White;
             this.button13.Location = new System.Drawing.Point(-1, 419);
@@ -238,7 +239,7 @@ namespace Calculator
             // button14
             // 
             this.button14.BackColor = System.Drawing.Color.Black;
-            this.button14.FlatAppearance.BorderSize = 0;
+            this.button14.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button14.ForeColor = System.Drawing.Color.White;
             this.button14.Location = new System.Drawing.Point(126, 419);
@@ -252,7 +253,7 @@ namespace Calculator
             // button15
             // 
             this.button15.BackColor = System.Drawing.Color.Black;
-            this.button15.FlatAppearance.BorderSize = 0;
+            this.button15.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button15.ForeColor = System.Drawing.Color.White;
             this.button15.Location = new System.Drawing.Point(252, 419);
@@ -414,7 +415,7 @@ namespace Calculator
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label1.Location = new System.Drawing.Point(-1, 0);
+            this.label1.Location = new System.Drawing.Point(-1, 2);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(510, 32);
             this.label1.TabIndex = 30;
@@ -438,7 +439,7 @@ namespace Calculator
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(650, 806);
+            this.ClientSize = new System.Drawing.Size(650, 810);
             this.Controls.Add(this.button29);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.richTextBox1);
