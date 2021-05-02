@@ -32,10 +32,46 @@ namespace Calculator
         }
 
         private void button4_Click(object sender, EventArgs e)
-        {
-           
-            label1.Text += "=";
-            richTextBox1.Text = "4";
+        { 
+            operand2 = input;
+            double num1, num2;
+            double.TryParse(operand1, out num1);
+            double.TryParse(operand2, out num2);
+
+             richTextBox1.Text = " ";
+             
+             input = string.Empty;
+             operand1 = string.Empty;
+             operand2 = string.Empty;
+
+
+            if (operation == '+')
+            {
+                result = num1 + num2;
+                richTextBox1.Text += result.ToString();
+            }
+            else if(operation == '-')
+            {
+                result = num1 - num2;
+                richTextBox1.Text += result.ToString();
+            }
+            else if(operation == '*')
+            {
+                result = num1 * num2;
+                richTextBox1.Text += result.ToString();
+            }
+            else if(operation == '/')
+            {
+                if(num2 != 0)
+                {
+                    result = num1 / num2;
+                    richTextBox1.Text = result.ToString();
+                }
+                else
+                {
+                    richTextBox1.Text = "Result is undefined";
+                }
+            }
             label1.Text = " ";
         }
 
@@ -137,6 +173,7 @@ namespace Calculator
         {
             operand1 = input;
             operation = '-';
+            label1.Text += '-';
             input = string.Empty;
         }
 
@@ -144,6 +181,7 @@ namespace Calculator
         {
             operand1 = input;
             operation = '*';
+            label1.Text += '*';
             input = string.Empty;
         }
 
@@ -151,7 +189,14 @@ namespace Calculator
         {
             operand1 = input;
             operation = '/';
+            label1.Text += '/';
             input = string.Empty;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            input += '.';
+            richTextBox1.Text += ".";
         }
     }
 }
