@@ -13,7 +13,6 @@ namespace Calculator
 {
     public partial class Form1 : Form
     {
-        private const string V = "+";
         bool expresion = false;
         string num2 = string.Empty;
         string _operation;
