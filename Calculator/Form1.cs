@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,9 +15,11 @@ namespace Calculator
     {
         private const string V = "+";
         bool expresion = false;
-        string num1, num2 = string.Empty;
+        string num2 = string.Empty;
         string _operation;
-        double _input = 0.0;
+        double _input = 0;
+
+        double _memory = 0;
         public Form1()
         {
             InitializeComponent();
@@ -33,20 +36,20 @@ namespace Calculator
 
         private void button4_Click(object sender, EventArgs e)
         {
-            label1.Text = "";
+            label1.Text += "=";
             switch (_operation)
             {
                 case "+": 
-                    richTextBox1.Text = (_input + Double.Parse(richTextBox1.Text)).ToString();
+                    richTextBox1.Text = (_input + Double.Parse(richTextBox1.Text, CultureInfo.InvariantCulture)).ToString();
                     break;
                 case "-":
-                    richTextBox1.Text = (_input - Double.Parse(richTextBox1.Text)).ToString();
+                    richTextBox1.Text = (_input - Double.Parse(richTextBox1.Text, CultureInfo.InvariantCulture)).ToString();
                     break;
                 case "X":
-                    richTextBox1.Text = (_input * Double.Parse(richTextBox1.Text)).ToString();
+                    richTextBox1.Text = (_input * Double.Parse(richTextBox1.Text, CultureInfo.InvariantCulture)).ToString();
                     break;
                 case "÷":
-                    richTextBox1.Text = (_input / Double.Parse(richTextBox1.Text)).ToString();
+                    richTextBox1.Text = (_input / Double.Parse(richTextBox1.Text, CultureInfo.InvariantCulture)).ToString();
                     break;
                 default:
                     Console.WriteLine("Nothing");
@@ -54,81 +57,13 @@ namespace Calculator
             }
             _input = Double.Parse(richTextBox1.Text);
             _operation = "";
+
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-          
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-
-           
-        }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-            
-        }
 
         private void button29_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void button9_Click(object sender, EventArgs e)
-        {
-          
-        }
-
-        private void button10_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void button11_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void button13_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void button14_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void button15_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void button8_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void button12_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void button16_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button20_Click(object sender, EventArgs e)
-        {
-           
+            _memory -= Double.Parse(richTextBox1.Text);
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -159,14 +94,14 @@ namespace Calculator
                 button4.PerformClick();
                 expresion = true;
                 _operation = btn.Text;
-                label1.Text = _input + "    " + _operation;
+                label1.Text = _input + "  " + _operation;
             }
             else
             {
                 _operation = btn.Text;
-                _input = Double.Parse(richTextBox1.Text);
+                _input = Double.Parse(richTextBox1.Text, CultureInfo.InvariantCulture);
                 expresion = true;
-                label1.Text = _input + "    " + _operation;
+                label1.Text = _input + "  " + _operation;
             }
 
         }
@@ -174,7 +109,7 @@ namespace Calculator
         private void button21_Click(object sender, EventArgs e)
         {
             double percent;
-            percent = Convert.ToDouble(richTextBox1.Text) / Convert.ToDouble(100);
+            percent = Convert.ToDouble(richTextBox1.Text, CultureInfo.InvariantCulture) / Convert.ToDouble(100);
             richTextBox1.Text = Convert.ToString(percent);
         }
 
@@ -189,22 +124,82 @@ namespace Calculator
         private void button18_Click(object sender, EventArgs e)
         {
             double x2;
-            x2 = Convert.ToDouble(richTextBox1.Text) * Convert.ToDouble(richTextBox1.Text);
+            x2 = Convert.ToDouble(richTextBox1.Text, CultureInfo.InvariantCulture) * Convert.ToDouble(richTextBox1.Text, CultureInfo.InvariantCulture);
             richTextBox1.Text = Convert.ToString(x2);
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            double x1;
+            x1 = Convert.ToDouble(1.0 / Convert.ToDouble(richTextBox1.Text, CultureInfo.InvariantCulture));
+            richTextBox1.Text = Convert.ToString(x1);
+        }
+
+        private void button24_Click(object sender, EventArgs e)
+        {
+            if(richTextBox1.Text.Length > 0)
+            {
+                richTextBox1.Text = richTextBox1.Text.Remove(richTextBox1.Text.Length - 1, 1);
+            }
+            if(richTextBox1.Text == "")
+            {
+                richTextBox1.Text = "0";
+            }
+        }
+
+        private void button25_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Text = "0";
+            label1.Text = " ";
+            _memory = 0;
+            button26.Enabled = false;
+            button25.Enabled = false;
+
+        }
+
+        private void button26_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Text = _memory.ToString();
+        }
+
+        private void button27_Click(object sender, EventArgs e)
+        {
+            _memory += Double.Parse(richTextBox1.Text);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void num_click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
             if(richTextBox1.Text == "0" || expresion)
-            {   
+            {
+                label1.Text +=" " + btn.Text+" ";
                 richTextBox1.Text = btn.Text;
                 expresion = false;
             }
             else
             {
+                richTextBox1.Text = " ";
                 richTextBox1.Text += btn.Text;
+
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if(richTextBox1.Text.StartsWith("-"))
+            {
+                richTextBox1.Text = richTextBox1.Text.Substring(1);
+            }
+            else if(!string.IsNullOrEmpty(richTextBox1.Text) && Double.Parse(richTextBox1.Text) != 0)
+            {
+                richTextBox1.Text = "-"+richTextBox1.Text;
+            }
+            
         }
     }
 }
