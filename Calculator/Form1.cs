@@ -12,11 +12,11 @@ namespace Calculator
 {
     public partial class Form1 : Form
     {
-        string input = string.Empty;
-        string operand1 = string.Empty;
-        string operand2 = string.Empty;
-        char operation;
-        double result = 0.0;
+        private const string V = "+";
+        bool expresion = false;
+        string num1, num2 = string.Empty;
+        string _operation;
+        double _input = 0.0;
         public Form1()
         {
             InitializeComponent();
@@ -32,72 +32,44 @@ namespace Calculator
         }
 
         private void button4_Click(object sender, EventArgs e)
-        { 
-            operand2 = input;
-            double num1, num2;
-            double.TryParse(operand1, out num1);
-            double.TryParse(operand2, out num2);
-
-             richTextBox1.Text = " ";
-             
-             input = string.Empty;
-             operand1 = string.Empty;
-             operand2 = string.Empty;
-
-
-            if (operation == '+')
+        {
+            label1.Text = "";
+            switch (_operation)
             {
-                result = num1 + num2;
-                richTextBox1.Text += result.ToString();
+                case "+": 
+                    richTextBox1.Text = (_input + Double.Parse(richTextBox1.Text)).ToString();
+                    break;
+                case "-":
+                    richTextBox1.Text = (_input - Double.Parse(richTextBox1.Text)).ToString();
+                    break;
+                case "X":
+                    richTextBox1.Text = (_input * Double.Parse(richTextBox1.Text)).ToString();
+                    break;
+                case "÷":
+                    richTextBox1.Text = (_input / Double.Parse(richTextBox1.Text)).ToString();
+                    break;
+                default:
+                    Console.WriteLine("Nothing");
+                    break;
             }
-            else if(operation == '-')
-            {
-                result = num1 - num2;
-                richTextBox1.Text += result.ToString();
-            }
-            else if(operation == '*')
-            {
-                result = num1 * num2;
-                richTextBox1.Text += result.ToString();
-            }
-            else if(operation == '/')
-            {
-                if(num2 != 0)
-                {
-                    result = num1 / num2;
-                    richTextBox1.Text = result.ToString();
-                }
-                else
-                {
-                    richTextBox1.Text = "Result is undefined";
-                }
-            }
-            label1.Text = " ";
+            _input = Double.Parse(richTextBox1.Text);
+            _operation = "";
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            richTextBox1.Text = " ";
-            input += button5.Text;
-            label1.Text += button5.Text;
-            richTextBox1.Text = input;
+          
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
 
-            richTextBox1.Text = " ";
-            input += button6.Text;
-            label1.Text += button6.Text;
-            richTextBox1.Text = input;
+           
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            richTextBox1.Text = " ";
-            input += button7.Text;
-            label1.Text += button7.Text;
-            richTextBox1.Text = input;
+            
         }
 
         private void button29_Click(object sender, EventArgs e)
@@ -107,96 +79,132 @@ namespace Calculator
 
         private void button9_Click(object sender, EventArgs e)
         {
-            richTextBox1.Text = " ";
-            input += button9.Text;
-            label1.Text += button9.Text;
-            richTextBox1.Text += input;
+          
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
-            richTextBox1.Text = " ";
-            input += button10.Text;
-            label1.Text += button10.Text;
-            richTextBox1.Text += input;
+            
         }
 
         private void button11_Click(object sender, EventArgs e)
         {
-            richTextBox1.Text = " ";
-            input += button11.Text;
-            label1.Text += button11.Text;
-            richTextBox1.Text += input;
+           
         }
 
         private void button13_Click(object sender, EventArgs e)
         {
-            richTextBox1.Text = " ";
-            input += button13.Text;
-            label1.Text += button13.Text;
-            richTextBox1.Text += input;
+           
         }
 
         private void button14_Click(object sender, EventArgs e)
         {
-            richTextBox1.Text = " ";
-            input += button14.Text;
-            label1.Text += button14.Text;
-            richTextBox1.Text += input;
+           
         }
 
         private void button15_Click(object sender, EventArgs e)
         {
-            richTextBox1.Text = " ";
-            input += button15.Text;
-            label1.Text += button15.Text;
-            richTextBox1.Text += input;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            richTextBox1.Text = " ";
-            input += button2.Text;
-            label1.Text += button2.Text;
-            richTextBox1.Text += input; 
+            
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            operand1 = input;
-            operation = '+';
-            label1.Text += '+'; 
-            input = string.Empty;
+           
         }
 
         private void button12_Click(object sender, EventArgs e)
         {
-            operand1 = input;
-            operation = '-';
-            label1.Text += '-';
-            input = string.Empty;
+           
         }
 
         private void button16_Click(object sender, EventArgs e)
         {
-            operand1 = input;
-            operation = '*';
-            label1.Text += '*';
-            input = string.Empty;
+
         }
 
         private void button20_Click(object sender, EventArgs e)
         {
-            operand1 = input;
-            operation = '/';
-            label1.Text += '/';
-            input = string.Empty;
+           
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            input += '.';
-            richTextBox1.Text += ".";
+            if (!richTextBox1.Text.Contains("."))
+            {
+               richTextBox1.Text += ".";
+            }
+           
+        }
+
+        private void button22_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Text = "0";
+            label1.Text = " ";
+        }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Text = "0";
+        }
+
+        private void operation(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            if(_input != 0)
+            {
+                button4.PerformClick();
+                expresion = true;
+                _operation = btn.Text;
+                label1.Text = _input + "    " + _operation;
+            }
+            else
+            {
+                _operation = btn.Text;
+                _input = Double.Parse(richTextBox1.Text);
+                expresion = true;
+                label1.Text = _input + "    " + _operation;
+            }
+
+        }
+
+        private void button21_Click(object sender, EventArgs e)
+        {
+            double percent;
+            percent = Convert.ToDouble(richTextBox1.Text) / Convert.ToDouble(100);
+            richTextBox1.Text = Convert.ToString(percent);
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            double sqrt;
+            label1.Text = "Sqrt(" + richTextBox1.Text + ")";
+            sqrt = Math.Sqrt(Double.Parse(richTextBox1.Text));
+            richTextBox1.Text = Convert.ToString(sqrt);
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            double x2;
+            x2 = Convert.ToDouble(richTextBox1.Text) * Convert.ToDouble(richTextBox1.Text);
+            richTextBox1.Text = Convert.ToString(x2);
+        }
+
+        private void num_click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            if(richTextBox1.Text == "0" || expresion)
+            {   
+                richTextBox1.Text = btn.Text;
+                expresion = false;
+            }
+            else
+            {
+                richTextBox1.Text += btn.Text;
+            }
         }
     }
 }
